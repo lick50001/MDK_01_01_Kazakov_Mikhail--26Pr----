@@ -20,6 +20,7 @@ namespace WpfApp3
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<TicketClass> ticketClasses = new List<TicketClass>();
         public MainWindow()
         {
             InitializeComponent();
