@@ -21,14 +21,26 @@ namespace WpfApp3.Pages
     public partial class Main : Page
     {
         MainWindow mainWindow;
-        public Main()
+        public Main(MainWindow mw)
         {
             InitializeComponent();
+            this .mainWindow = mw;
         }
 
         private void ToSearch(object sender, RoutedEventArgs e)
         {
-            mainWindow.frame.Navigate(new Pages.Ticket(mainWindow, from.text, to.Text));
+            string fromCity = From.Text;
+            string toCity = To.Text;
+
+            if (string.IsNullOrWhiteSpace(fromCity) || string.IsNullOrWhiteSpace(toCity))
+            {
+                MessageBox.Show("Пожалуйста, укажите город отправления и назначения.", "Ошибка");
+                return;
+            }
+
+            Ticket ticketPage = new Ticket(mainWindow, fromCity, toCity);
+
+            mainWindow.frame.Navigate(ticketPage);
         }
 
         private void ToExit(object sender, RoutedEventArgs e)

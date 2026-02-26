@@ -104,7 +104,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="TicketClass.cs" />
+    <Compile Include="Elements\Item.xaml.cs">
+      <DependentUpon>Item.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\TicketClass.cs" />
+    <Page Include="Elements\Item.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -158,6 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorkingBD\WorkingBD.csproj">
+      <Project>{0f81c5b4-52d1-4e1e-a7a8-bec39e3db6d9}</Project>
+      <Name>WorkingBD</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
