@@ -20,9 +20,20 @@ namespace WpfApp3.Pages
     /// </summary>
     public partial class Main : Page
     {
+        MainWindow mainWindow;
         public Main()
         {
             InitializeComponent();
+        }
+
+        private void ToSearch(object sender, RoutedEventArgs e)
+        {
+            mainWindow.frame.Navigate(new Pages.Ticket(mainWindow, from.text, to.Text));
+        }
+
+        private void ToExit(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Close();
         }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Управление авиалиниями" Height="450" Width="800">
     <Grid>
-        <Frame Content="Frame" Visibility="Hidden"/>
+        <Frame Content="Frame" x:Name="frame" Visibility="Hidden"/>
 
     </Grid>
 </Window>

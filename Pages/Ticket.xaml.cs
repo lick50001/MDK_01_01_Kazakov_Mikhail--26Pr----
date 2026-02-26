@@ -20,9 +20,15 @@ namespace WpfApp3.Pages
     /// </summary>
     public partial class Ticket : Page
     {
+        MainWindow mainWindow;
         public Ticket()
         {
             InitializeComponent();
+        }
+
+        private void ToBack(object sender, RoutedEventArgs e)
+        {
+            mainWindow.OpenPages(MainWindow.pages.main);
         }
     }
 }
