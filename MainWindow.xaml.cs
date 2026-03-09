@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
-using WorkingBD;
 using WpfApp3.Pages;
 
 namespace WpfApp3
