@@ -49,7 +49,7 @@ namespace WpfApp3
             MySqlConnection myConn = new MySqlConnection(conn);
             myConn.Open();
 
-            string query = "SELECT * FROM flights;";
+            string query = "SELECT * FROM Tickets;";
 
             using (MySqlCommand cmd = new MySqlCommand(query, myConn))
             using (MySqlDataReader reader = cmd.ExecuteReader())

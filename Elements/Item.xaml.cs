@@ -1,30 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using WpfApp3.Pages;
 
 namespace WpfApp3.Elements
 {
-    /// <summary>
-    /// Логика взаимодействия для Item.xaml
-    /// </summary>
     public partial class Item : UserControl
     {
         public Item()
         {
             InitializeComponent();
-            
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext is TicketClass ticket)
+            {
+                CalculateDuration(ticket);
+            }
+        }
+
+        private void CalculateDuration(TicketClass ticket)
+        {
+            try
+            {
+                DateTime start = DateTime.Parse(ticket.Time_start);
+                DateTime end = DateTime.Parse(ticket.Time_way);
+                TimeSpan diff = (end < start) ? (end.AddDays(1) - start) : (end - start);
+
+                if (lDuration != null)
+                    lDuration.Content = $"В пути {Math.Floor(diff.TotalHours)}ч {diff.Minutes}м";
+
+                if (TimeEnd != null)
+                    TimeEnd.Content = end.ToString("HH:mm");
+            }
+            catch { }
         }
     }
 }

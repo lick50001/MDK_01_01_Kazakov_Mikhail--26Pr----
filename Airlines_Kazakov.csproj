@@ -168,7 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WorkingBD\WorkingBD.csproj">
-      <Project>{0f81c5b4-52d1-4e1e-a7a8-bec39e3db6d9}</Project>
+      <Project>{9b5aaf83-3e59-47db-adb3-578a17eef965}</Project>
       <Name>WorkingBD</Name>
     </ProjectReference>
   </ItemGroup>
